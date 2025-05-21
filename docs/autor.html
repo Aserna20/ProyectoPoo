@@ -1,30 +1,62 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Autor del Proyecto</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autor del Proyecto</title>
+  <link rel="stylesheet" href="estilos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <img src="img/logo.png" alt="Logo" class="logo">
-            <h1>Sobre el Autor</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="acerca.html">Acerca de</a></li>
-                    <li><a href="descripcion.html">Descripción</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="navbar">
+      <img src="img/logo.png" alt="Logo" class="logo" />
+      <h1>Sobre el Autor</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+          <li><a href="descripcion.html">Descripción</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section>
-            <h2>Juan Pérez</h2>
-            <p>Estudiante de Ingeniería Catastral y Geodesia en Bogotá. Apasionado por la geografía, los sistemas de información geográfica y la planificación urbana. Este proyecto integra conocimientos técnicos con una mirada crítica sobre la transformación del territorio urbano.</p>
-        </section>
-    </main>
+  <main>
+    <section class="bio">
+      <h2>Angel Ivan Serna Aguilera</h2>
+      <p>
+        Soy estudiante de Ingeniería Catastral y Geodesia en Bogotá, apasionado por la
+        planificación urbana, los sistemas de información geográfica y el desarrollo sostenible.
+        Este proyecto nace del interés por comprender cómo las políticas territoriales influyen en
+        la transformación de los barrios tradicionales como Normandía. Naci el 25 de enero del 2005 en la ciudad de Manizalez. 
+      </p>
+    </section>
+
+    <section class="mapa-autor">
+      <h2>Ubicación destacada: Hospital de Country</h2>
+      <p>El Hospital de Country, una referencia médica en Bogotá, es un punto central dentro del estudio urbano.</p>
+      <div id="map" style="height: 450px; margin-top: 20px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Proyecto POT Normandía. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([4.6676, -74.0560], 17);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var marker = L.marker([4.6676, -74.0560]).addTo(map);
+    marker.bindPopup('<b>Hospital de Country</b><br>Ubicación de referencia en Bogotá.');
+  </script>
 </body>
 </html>

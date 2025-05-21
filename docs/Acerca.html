@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Acerca del Proyecto</title>
-    <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca del Proyecto</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <img src="img/logo.png" alt="Logo" class="logo">
-            <h1>Acerca del Proyecto</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="descripcion.html">Descripción</a></li>
-                    <li><a href="autor.html">Autor</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="navbar">
+      <img src="img/logo.png" alt="Logo" class="logo">
+      <h1>Acerca del Proyecto</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="descripcion.html">Descripción</a></li>
+          <li><a href="autor.html">Autor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section>
-            <h2>Implicación del POT en Normandía</h2>
-            <p>Este proyecto estudia cómo el Plan de Ordenamiento Territorial (POT) y zonal ha impactado las construcciones del barrio Normandía en Bogotá D.C., especialmente en función de la normativa vigente de la curaduría urbana número 2.</p>
-        </section>
-    </main>
+  <main>
+    <section>
+      <h2>Área de estudio: Barrio Normandía</h2>
+      <p>Este mapa muestra un polígono representativo del barrio Normandía, Bogotá D.C., como parte del análisis del POT y su impacto en la dinámica urbana.</p>
+      <div id="map" style="height: 450px; margin-top: 20px;"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([4.6684065, -74.1067738], 15);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var polygon = L.polygon([
+      [4.663103, -74.109539],
+      [4.671205, -74.100484],
+      [4.674234, -74.104012],
+      [4.666481, -74.111686]
+    ], {
+      color: 'green',
+      fillColor: '#66ff66',
+      fillOpacity: 0.4
+    }).addTo(map);
+
+    polygon.bindPopup('Área aproximada del barrio Normandía');
+  </script>
 </body>
 </html>

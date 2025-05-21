@@ -5,6 +5,12 @@
     margin-top: 20px;
 }
 
+.logo {
+    height: 60px;
+    width: auto;
+    margin-right: 15px;
+}
+
 * {
     margin: 0;
     padding: 0;
