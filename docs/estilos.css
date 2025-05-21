@@ -122,3 +122,33 @@ footer {
   border: 2px solid #ccc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+.bio {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.bio-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bio-texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.bio-imagen {
+  flex-shrink: 0;
+}
+
+.foto-autor {
+  width: 220px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
