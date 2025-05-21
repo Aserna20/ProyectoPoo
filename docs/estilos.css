@@ -1,4 +1,9 @@
-#map { height: 180px; }
+#map {
+    height: 450px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+}
 
 * {
     margin: 0;
