@@ -1,1 +1,76 @@
 #map { height: 180px; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eaf2f8;
+    color: #333;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 1em 2em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.navbar h1 {
+    flex: 1;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #00509e;
+}
+
+main {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#map {
+    height: 450px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
